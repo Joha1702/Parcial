@@ -43,6 +43,11 @@ ON MASKS
 FOR EACH ROW
 
 DECLARE
+mask_ing VARCHAR2(4000);
 BEGIN
+SELECT masks INTO mask_ing
+FROM MASKS;
+
+:new.result := mask_function(mask_ing);
 
 END;
